@@ -1,10 +1,8 @@
 package com.example.CadastroDeNinjas.Ninjas;
 
-import com.example.CadastroDeNinjas.Missoes.MissaoModel;
+import com.example.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.List;
 
 @Entity
 @Table(name = "tb_ninjas")
@@ -23,6 +21,6 @@ public class NinjaModel {
 
     @ManyToOne
     @JoinColumn(name = "missao_id")
-    private MissaoModel missao;
+    private MissoesModel missoes;
 
 }
