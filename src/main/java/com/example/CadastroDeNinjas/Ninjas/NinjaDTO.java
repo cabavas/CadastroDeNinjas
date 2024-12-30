@@ -1,30 +1,22 @@
 package com.example.CadastroDeNinjas.Ninjas;
 
-import com.example.CadastroDeNinjas.Missoes.MissoesModel;
-import jakarta.persistence.*;
-import lombok.*;
 
-@Entity
-@Table(name = "tb_ninjas")
+import com.example.CadastroDeNinjas.Missoes.MissoesModel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class NinjaModel {
+public class NinjaDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nome;
-
-    @Column(unique = true)
     private String email;
-
     private int idade;
-
-    private String rank;
-
-    @ManyToOne
-    @JoinColumn(name = "missao_id")
     private MissoesModel missoes;
+    private String rank;
 }
+
